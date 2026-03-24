@@ -1,21 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>笔记本1.0</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>笔记本 1.0</title>
     <style>
-        .container { width: 500px; margin: 0 auto; border: 2px solid #333; padding: 20px; }
-        .important { color: red; }
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        /* 容器样式（响应式） */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* 标题样式 */
+        h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        /* 笔记内容样式 */
+        #noteDisplay {
+            font-size: 18px;
+            color: #27ae60;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #ecf9f0;
+            border-radius: 4px;
+        }
+
+        /* 重要文字样式 */
+        .important {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* 底部名言样式 */
+        h2 {
+            font-size: 16px;
+            color: #7f8c8d;
+            text-align: right;
+            margin-top: 25px;
+            font-style: italic;
+        }
+
+        /* 弹窗提示样式 */
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 999;
+        }
+        .toast.show {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
-	<script>
-        alert('锲而不舍，金石可镂')
-        </script>
+    <!-- 提示弹窗 -->
+    <div class="toast" id="toast">锲而不舍，金石可镂</div>
+
     <div class="container">
         <h1 id="appTitle">我的第一课</h1>
-        <div id="noteDisplay">⭐今天学习了JavaScript基础</div>
-		<h2>悟已往之不见，知来者之可追</h2>
+        <div id="noteDisplay">⭐ 今天学习了JavaScript基础</div>
+        <h2>悟已往之不谏，知来者之可追</h2>
     </div>
 
+    <script>
+        // 显示提示弹窗，2秒后自动消失
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000);
+    </script>
 </body>
 </html>
