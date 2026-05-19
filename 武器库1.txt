@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 适配移动端 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>现代武器库简介</title>
+    <style>
+        /* 全局样式重置与基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 页面背景：纯白色 */
+        body {
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        /* 页面标题样式 */
+        .page-title {
+            text-align: center;
+            color: #222;
+            margin: 30px 0;
+            font-size: 32px;
+        }
+
+        /* 武器卡片容器：响应式布局 */
+        .weapon-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 武器卡片样式：带边框 */
+        .weapon-card {
+            border: 2px solid #333; /* 卡片边框 */
+            border-radius: 8px; /* 边框圆角，更美观 */
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* 卡片悬停效果 */
+        .weapon-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        /* 武器图片样式 */
+        .weapon-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        /* 武器名称 */
+        .weapon-name {
+            font-size: 20px;
+            color: #111;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #666;
+            padding-bottom: 5px;
+        }
+
+        /* 武器简介 */
+        .weapon-desc {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">现代武器库信息简介</h1>
+
+    <div class="weapon-container">
+    
+
+        <div class="weapon-card">
+            <h3 class="weapon-name">RPG-7 火箭筒</h3>
+            <p class="weapon-desc">便携式反坦克火箭发射器，操作简单、威力强劲，可有效打击装甲车辆、工事和低空目标，广泛装备各国军队。</p>
+        </div>
+
+        <div class="weapon-card">
+            <h3 class="weapon-name">95式自动步枪</h3>
+            <p class="weapon-desc">中国自主研发的制式突击步枪，采用无托结构，便携性强、精度良好，适配中国军队的作战需求。</p>
+        </div>
+
+       
+    </div>
+</body>
+</html>
