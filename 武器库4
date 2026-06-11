@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>武器库V4 带搜索交互完整版</title>
+    <style>
+        body {background: #f5f5f5; padding: 20px;}
+        .search-box {margin-bottom: 20px;}
+        input,button {padding: 8px; font-size: 16px;}
+        .weapon-card {
+            width: 320px;
+            background: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 5px solid #8b0000;
+        }
+        .type {color: #999; font-size: 14px;}
+    </style>
+</head>
+<body>
+    <h1>完整版兵器库（支持搜索筛选）</h1>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="输入武器名称搜索...">
+        <button id="searchBtn">查询兵器</button>
+    </div>
+    <div id="container"></div>
+
+    <script>
+        // 完整武器数据库
+        let weaponData = [
+            {name:"长枪", type:"长柄武器", harm:"高", desc:"远距离穿刺，克制重甲"},
+            {name:"大刀", type:"重武器", harm:"极高", desc:"劈砍伤害强，攻速慢"},
+            {name:"长剑", type:"轻兵器", harm:"中", desc:"灵活轻巧，适合侠客"},
+            {name:"弓箭", type:"远程武器", harm:"中", desc:"先手输出，怕近身"},
+            {name:"长戟", type:"长柄武器", harm:"高", desc:"兼具勾、啄、刺多重攻击"},
+            {name:"匕首", type:"轻兵器", harm:"低", desc:"隐蔽偷袭，近距离爆发"}
+        ];
+        const box = document.getElementById("container");
+        const input = document.getElementById("searchInput");
+        const btn = document.getElementById("searchBtn");
+
+        // 封装渲染函数：复用渲染逻辑
+        function render(list){
+            let html = "";
+            if(list.length === 0){
+                html = "<p>未匹配到对应兵器！</p>";
+            }else{
+                list.forEach(item => {
+                    html += `
+                        <div class="weapon-card">
+                            <h3>${item.name}</h3>
+                            <div class="type">分类：${item.type}</div>
+                            <p>杀伤力：${item.harm}</p>
+                            <p>介绍：${item.desc}</p>
+                        </div>
+                    `;
+                })
+            }
+            box.innerHTML = html;
+        }
+
+        // 页面加载默认渲染全部武器
+        render(weaponData);
+
+        // 绑定点击搜索事件
+        btn.onclick = function(){
+            let key = input.value.trim();
+            if(key === ""){
+                render(weaponData);
+                return;
+            }
+            // 数组过滤匹配关键词
+            let result = weaponData.filter(item => item.name.includes(key));
+            render(result);
+        }
+    </script>
+</body>
+</html>
