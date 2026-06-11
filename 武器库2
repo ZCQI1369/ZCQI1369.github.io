@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>武器库V2 数组存储数据</title>
+    <style>
+        p {font-size: 16px;}
+    </style>
+</head>
+<body>
+    <h1>古代兵器库 - 数组优化版</h1>
+    <div id="box"></div>
+
+    <script>
+        // 用数组统一存放所有武器
+        let weaponList = ["长枪", "大刀", "长剑", "弓箭", "长戟"];
+        let htmlStr = "<h3>全部兵器列表：</h3>";
+
+        // for循环自动遍历所有武器
+        for(let i = 0; i < weaponList.length; i++){
+            htmlStr += `<p>${i+1}. ${weaponList[i]}</p>`;
+        }
+        htmlStr += "<p>共收录" + weaponList.length + "件冷兵器</p>";
+
+        // 写入页面容器
+        document.getElementById("box").innerHTML = htmlStr;
+    </script>
+</body>
+</html>
