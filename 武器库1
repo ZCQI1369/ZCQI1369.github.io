@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>武器库V1 </title>
+</head>
+<body>
+    <h1>古代兵器库</h1>
+    <script>
+        // 基础变量定义武器名称
+        let w1 = "长枪";
+        let w2 = "大刀";
+        let w3 = "长剑";
+
+        // 直接拼接输出
+        document.write("<h3>现有基础兵器：</h3>");
+        document.write("<p>1." + w1 + "</p>");
+        document.write("<p>2." + w2 + "</p>");
+        document.write("<p>3." + w3 + "</p>");
+        document.write("<p>特点：近战冷兵器，适合步兵作战</p>");
+    </script>
+</body>
+</html>
