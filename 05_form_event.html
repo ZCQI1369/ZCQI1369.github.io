@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>阶段5：事件与表单</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="请输入姓名">
+    <button id="submitBtn">点击提交</button>
+    <p id="showText"></p>
+
+    <h3>知识点：addEventListener、点击事件、输入框取值、表单交互</h3>
+    <script>
+        let input = document.getElementById("username");
+        let btn = document.getElementById("submitBtn");
+        let show = document.getElementById("showText");
+
+        // 点击事件
+        btn.addEventListener("click", function(){
+            let val = input.value;
+            show.innerText = "你输入的内容：" + val;
+        })
+    </script>
+</body>
+</html>
