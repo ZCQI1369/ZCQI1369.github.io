@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>阶段7：本地存储练习</title>
+</head>
+<body>
+    <input type="text" id="storageInput" placeholder="输入要保存的文字">
+    <button id="saveBtn">保存数据</button>
+    <button id="clearBtn">清空存储</button>
+    <p>已保存内容：<span id="result"></span></p>
+
+    <h3>知识点：localStorage.setItem/getItem/removeItem，页面刷新数据不丢失</h3>
+    <script>
+        let inp = document.getElementById("storageInput");
+        let save = document.getElementById("saveBtn");
+        let clear = document.getElementById("clearBtn");
+        let res = document.getElementById("result");
+
+        // 页面加载读取本地存储
+        window.onload = function(){
+            let data = localStorage.getItem("userText");
+            res.innerText = data || "无数据";
+        }
+
+        // 保存
+        save.addEventListener("click", ()=>{
+            localStorage.setItem("userText", inp.value);
+            res.innerText = inp.value;
+        })
+
+        // 清空
+        clear.addEventListener("click", ()=>{
+            localStorage.removeItem("userText");
+            res.innerText = "无数据";
+            inp.value = "";
+        })
+    </script>
+</body>
+</html>
