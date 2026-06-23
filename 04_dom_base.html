@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>阶段4：DOM基础操作</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="title">原始标题</h2>
+    <div class="box" id="boxDom">我是盒子</div>
+
+    <h3>知识点：getElementById、innerText、style修改样式</h3>
+    <script>
+        // 获取页面元素
+        let title = document.getElementById("title");
+        let box = document.getElementById("boxDom");
+
+        // 修改文字内容
+        title.innerText = "JS修改后的标题";
+
+        // 修改行内样式
+        box.style.backgroundColor = "#eee";
+        box.style.color = "#f00";
+    </script>
+</body>
+</html>
