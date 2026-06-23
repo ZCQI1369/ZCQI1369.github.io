@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>期末综合大作业：武器库信息展示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #fff;
+            padding: 30px;
+            font-family: "微软雅黑";
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .weapon-card {
+            border: 1px solid #222;
+            padding: 18px;
+            border-radius: 6px;
+        }
+        .weapon-card h3 {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #999;
+            padding-bottom: 6px;
+        }
+        .search-box {
+            width: 400px;
+            margin: 0 auto 30px;
+            display: flex;
+            gap: 8px;
+        }
+        #search {
+            flex: 1;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #searchBtn {
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>武器库信息简介系统（JS综合项目）</h1>
+    <div class="search-box">
+        <input type="text" id="search" placeholder="输入武器名称搜索">
+        <button id="searchBtn">搜索</button>
+    </div>
+    <div class="wrap" id="container"></div>
+
+    <script>
+        // 知识点汇总：数组、对象、DOM渲染、循环遍历、事件、过滤筛选
+        // 1.武器数据源（数组对象）
+        const weaponList = [
+            {name:"AK-47突击步枪",desc:"苏联经典枪械，适应各类恶劣环境，可靠性极强。"},
+            {name:"95式自动步枪",desc:"国产无托制式步枪，轻便紧凑，适配国内作战环境。"},
+            {name:"AWM狙击枪",desc:"高精度远距离栓动狙击武器，多用于精准远距离打击。"},
+            {name:"M4A1卡宾枪",desc:"美军主流装备，模块化改装空间大，后坐力低。"},
+            {name:"RPG-7火箭筒",desc:"便携式反坦克武器，可打击装甲与工事目标。"}
+        ]
+
+        const container = document.getElementById("container");
+        const searchInp = document.getElementById("search");
+        const searchBtn = document.getElementById("searchBtn");
+
+        // 2.渲染武器卡片函数
+        function render(list) {
+            container.innerHTML = "";
+            list.forEach(item => {
+                let div = document.createElement("div");
+                div.className = "weapon-card";
+                div.innerHTML = `
+                    <h3>${item.name}</h3>
+                    <p>${item.desc}</p>
+                `
+                container.appendChild(div);
+            })
+        }
+
+        // 初始渲染全部武器
+        render(weaponList);
+
+        // 3.搜索筛选功能（点击事件+数组filter）
+        searchBtn.addEventListener("click", function(){
+            let key = searchInp.value.trim();
+            if(!key) {
+                render(weaponList);
+                return;
+            }
+            let filterArr = weaponList.filter(item => item.name.includes(key));
+            render(filterArr);
+        })
+    </script>
+</body>
+</html>
