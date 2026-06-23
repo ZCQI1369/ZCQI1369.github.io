@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>阶段9：定时器异步</title>
+</head>
+<body>
+    <p id="timeText">倒计时：10</p>
+    <h3>知识点：同步异步、setInterval、setTimeout、清除定时器clearInterval</h3>
+    <script>
+        let count = 10;
+        let text = document.getElementById("timeText");
+        let timer = setInterval(function(){
+            count--;
+            text.innerText = "倒计时：" + count;
+            if(count <= 0){
+                clearInterval(timer);
+                text.innerText = "倒计时结束";
+            }
+        }, 1000)
+
+        // 延时执行
+        setTimeout(()=>{
+            console.log("3秒后执行这段异步代码");
+        }, 3000)
+
+        console.log("同步代码先执行");
+    </script>
+</body>
+</html>
