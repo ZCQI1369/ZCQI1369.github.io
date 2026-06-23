@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>阶段8：面向对象构造函数</title>
+</head>
+<body>
+    <h3>知识点：构造函数、new实例、this指向、实例方法</h3>
+    <script>
+        // 构造函数：学生类
+        function Student(name, age, className) {
+            this.name = name;
+            this.age = age;
+            this.className = className;
+            // 实例方法
+            this.study = function(){
+                console.log(`${this.name}正在学习JS课程`);
+            }
+        }
+
+        // 创建实例对象
+        let s1 = new Student("小李", 19, "JS一班");
+        let s2 = new Student("小张", 18, "JS一班");
+
+        console.log(s1.name, s1.age);
+        s1.study();
+        s2.study();
+    </script>
+</body>
+</html>
