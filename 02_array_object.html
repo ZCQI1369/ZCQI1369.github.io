@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>阶段2：数组对象基础</title>
+</head>
+<body>
+    <h3>知识点：数组push/pop/splice、对象创建、遍历for in</h3>
+    <script>
+        // 数组操作
+        let fruitArr = ["苹果", "香蕉", "橙子"];
+        fruitArr.push("葡萄"); // 末尾添加
+        fruitArr.pop(); // 删除最后一个
+        console.log("数组结果：", fruitArr);
+
+        // 自定义对象
+        let student = {
+            id: 1001,
+            name: "小明",
+            age: 18,
+            sayHi: function(){
+                console.log("大家好，我是" + this.name);
+            }
+        }
+        console.log(student.name);
+        student.sayHi();
+
+        // 对象遍历
+        for(let key in student){
+            console.log(key, student[key]);
+        }
+    </script>
+</body>
+</html>
