@@ -2,28 +2,79 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>笔记本 1.0</title>
+    <title>JS一学期阶段性练习合集</title>
     <style>
+        body {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+            font-family: "微软雅黑";
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+        .item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 6px;
+        }
+        a {
+            font-size: 18px;
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            color: #555;
+            margin: 6px 0 0;
+        }
     </style>
 </head>
 <body>
-    <!-- 提示弹窗 -->
-    <div class="toast" id="toast">锲而不舍，金石可镂</div>
-
-    <div class="container">
-        <h1 id="appTitle">我的第一课</h1>
-        <div id="noteDisplay">⭐ 今天学习了JavaScript基础</div>
-        <h2>悟已往之不谏，知来者之可追</h2>
+    <h1>JavaScript 一学期课程全部练习代码</h1>
+    <div class="item">
+        <a href="01_basic_syntax.html">阶段1：JS基础语法</a>
+        <p>知识点：变量、分支、循环、运算符</p>
     </div>
-
-    <script>
-        // 显示提示弹窗，2秒后自动消失
-        const toast = document.getElementById('toast');
-        toast.classList.add('show');
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 2000);
-    </script>
+    <div class="item">
+        <a href="02_array_object.html">阶段2：数组与对象</a>
+        <p>知识点：数组增删、对象定义、遍历</p>
+    </div>
+    <div class="item">
+        <a href="03_function_study.html">阶段3：函数封装</a>
+        <p>知识点：普通函数、返回值、匿名函数</p>
+    </div>
+    <div class="item">
+        <a href="04_dom_base.html">阶段4：DOM基础操作</a>
+        <p>知识点：获取元素、修改文字、修改样式</p>
+    </div>
+    <div class="item">
+        <a href="05_form_event.html">阶段5：事件与表单交互</a>
+        <p>知识点：点击事件、输入框取值</p>
+    </div>
+    <div class="item">
+        <a href="06_calculator.html">阶段6：简易网页计算器</a>
+        <p>知识点：DOM综合、事件委托、运算逻辑</p>
+    </div>
+    <div class="item">
+        <a href="07_localStorage.html">阶段7：本地存储localStorage</a>
+        <p>知识点：数据持久化保存、读取删除</p>
+    </div>
+    <div class="item">
+        <a href="08_orient_object.html">阶段8：面向对象构造函数</a>
+        <p>知识点：构造函数、new实例、this指向</p>
+    </div>
+    <div class="item">
+        <a href="09_async_timer.html">阶段9：定时器与异步代码</a>
+        <p>知识点：setInterval、setTimeout、清除定时器</p>
+    </div>
+    <div class="item">
+        <a href="武器库01.html">阶段10：期末综合大作业 武器库</a>
+        <p>知识点：数组对象渲染、搜索筛选、DOM综合</p>
+    </div>
 </body>
 </html>
